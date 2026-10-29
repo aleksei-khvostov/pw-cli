@@ -49,9 +49,9 @@ dev = [
 pwcli = "pwcli.cli:app"
 
 [project.urls]
-Homepage = "https://github.com/YOUR_USERNAME/pw-cli"
-Repository = "https://github.com/YOUR_USERNAME/pw-cli"
-Issues = "https://github.com/YOUR_USERNAME/pw-cli/issues"
+Homepage = "https://github.com/aleksei-khvostov/pw-cli"
+Repository = "https://github.com/aleksei-khvostov/pw-cli"
+Issues = "https://github.com/aleksei-khvostov/pw-cli/issues"
 
 [tool.setuptools.packages.find]
 where = ["src"]
