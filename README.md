@@ -1,7 +1,7 @@
 # pw-cli
 
 [![CI](https://github.com/aleksei-khvostov/pw-cli/actions/workflows/ci.yml/badge.svg)](https://github.com/aleksei-khvostov/pw-cli/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Declared license: MIT](https://img.shields.io/badge/Declared_license-MIT-yellow.svg)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org)
 
 **Modern CLI Password Generator with an Encrypted Local Vault**
@@ -58,6 +58,9 @@ Restart your terminal afterwards.
 **Threat model:** `pw-cli` protects your vault if the vault file is copied or leaked without the master password. It does **not** protect against malware, keyloggers, compromised terminals, screen recording, clipboard monitoring, or a weak master password.
 
 For highly sensitive accounts, consider using a professionally audited password manager.
+
+**Storage limitations:** vault writes are direct rather than atomic, with no file locking or explicit permission hardening. Back up the encrypted file; concurrent writers or interrupted writes can lose data. Stored version/KDF/iteration fields are not validated or used to select derivation parameters on load. Clipboard clearing runs in a daemon thread and normally ends when the CLI process exits; it is not a reliable erasure guarantee.
+
 ## Installation
 
 ```bash
@@ -84,4 +87,4 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## License
 
-MIT
+Package metadata declares MIT, but this checkout contains no LICENSE file. A complete license grant and copyright holder need maintainer confirmation.
